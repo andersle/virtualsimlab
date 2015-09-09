@@ -1,4 +1,5 @@
 """Simple 3D plot"""
+# pylint: disable=C0103
 from mpl_toolkits.mplot3d import Axes3D  # for projection='3d'
 import matplotlib.pyplot as plt
 import numpy as np
@@ -10,14 +11,14 @@ matplotlib.style.use('bmh')
 fig = plt.figure()
 ax1 = fig.add_subplot(111, projection='3d')
 
-time = np.linspace(0, 1, 100)
+TIME = np.linspace(0, 1, 100)
 
-x1 = np.ones(len(time))
-y1 = (time / 2)**2
-radius = 1.0 - 0.5 * time**2
-x2 = x1 - np.sin(np.pi * time)
-y2 = radius * np.cos(np.pi * time)
-z = time
+x1 = np.ones(len(TIME))
+y1 = (TIME / 2)**2
+radius = 1.0 - 0.5 * TIME**2
+x2 = x1 - np.sin(np.pi * TIME)
+y2 = radius * np.cos(np.pi * TIME)
+z = TIME
 
 xmat = np.vstack((x1, x2)).T
 ymat = np.vstack((y1, y2)).T
