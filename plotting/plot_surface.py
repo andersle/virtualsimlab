@@ -1,12 +1,15 @@
 """Simple 3D plot"""
 # pylint: disable=C0103
+from __future__ import print_function
 from mpl_toolkits.mplot3d import Axes3D  # for projection='3d'
 import matplotlib.pyplot as plt
 import numpy as np
 import matplotlib
 
-
-matplotlib.style.use('bmh')
+try:
+    matplotlib.style.use('bmh')
+except AttributeError:
+    print('Could not load style, update matplotlib!')
 
 fig = plt.figure()
 ax1 = fig.add_subplot(111, projection='3d')
